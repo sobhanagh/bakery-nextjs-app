@@ -29,7 +29,7 @@ const Navbar = () => {
 
 
     return (
-        <div className="flex items-center justify-between flex-wrap p-5 md:px-10">
+        <div className="flex items-center justify-between md:justify-start md:gap-32 flex-wrap p-3 md:px-10 text-white z-10 lg:text-xl">
             <Link href="/">
                 <Image
                     src={"/logo.svg"}
@@ -40,21 +40,22 @@ const Navbar = () => {
                 />
             </Link>
             <button className="md:hidden mb-3" onClick={showLinks}>
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="size-6">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" className="size-7">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
                 </svg>
             </button>
-            <ul className="flex ml-3 flex-col w-full overflow-hidden max-h-0 mt-2 transition-all duration-300 md:max-h-96 md:w-auto md:flex-row md:gap-3 lg:gap-5 md:mt-0 md:ml-0 md:mb-3">
+            <ul className="flex ml-3 flex-col w-full overflow-hidden max-h-0 mt-2 transition-all duration-300 md:max-h-96 md:w-auto md:justify-start md:flex-row md:gap-3 lg:gap-5 md:mt-0 md:ml-0 md:mb-3">
                 {
                     Links.map((item) => {
                         return (
-                            <Link className="lg:hover:text-brownColor transition-colors duration-200" key={item.address} href={item.address}>
+                            <Link className="lg:hover:text-brownColor transition-colors duration-200 font-semibold " key={item.address} href={item.address}>
                                 {item.title}
                             </Link>
                         )
                     })
                 }
             </ul>
+
         </div>
     )
 }
