@@ -18,7 +18,7 @@ const config: Config = {
       },
       blur: {
         xs: '2px',
-      }
+      },
     },
   },
   plugins: [

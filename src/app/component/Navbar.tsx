@@ -1,15 +1,13 @@
 "use client";
 
-
 import Link from "next/link"
 import Image from "next/image";
-
 
 const Navbar = () => {
 
     const Links = [
         { title: "Home", address: "/" },
-        { title: "Blog", address: "/blog" },
+        { title: "Products", address: "/products" },
         { title: "Contact Us", address: "/contactus" },
         { title: "Services", address: "/services" },
     ]
