@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import TopProducts from "./component/TopProducts";
+import FirstBuy from "./component/FirstBuy";
 
 
 export default function Home() {
@@ -24,8 +25,10 @@ export default function Home() {
           <TopProducts />
         </div>
       </div>
-      <div>
+      <div className="mt-10">
+        <FirstBuy />
       </div>
-    </main>
+
+    </main >
   );
 }
