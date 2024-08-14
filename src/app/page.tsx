@@ -3,7 +3,7 @@ import Link from "next/link";
 import TopProducts from "./component/TopProducts";
 import FirstBuy from "./component/FirstBuy";
 import AboutUs from "./component/AboutUs";
-
+import Footer from "./component/Footer";
 
 export default function Home() {
   return (
@@ -31,6 +31,9 @@ export default function Home() {
       </div>
       <div className="mt-10">
         <AboutUs />
+      </div>
+      <div className="mt-10">
+        <Footer />
       </div>
     </main >
   );
