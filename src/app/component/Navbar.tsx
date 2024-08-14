@@ -29,7 +29,7 @@ const Navbar = () => {
     const path = usePathname();
 
     return (
-        <div className="flex items-center justify-between md:justify-start md:gap-32 flex-wrap p-3 md:px-10 text-white z-10 lg:text-xl">
+        <div className={`flex items-center justify-between md:justify-start md:gap-32 flex-wrap p-3 md:px-10 text-white z-10 lg:text-xl ${path === '/products' ? 'md:justify-between' : ''}`}>
             <Link href="/">
                 <Image
                     src={"/logo.svg"}
