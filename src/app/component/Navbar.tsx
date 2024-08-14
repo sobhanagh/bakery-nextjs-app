@@ -2,6 +2,7 @@
 
 import Link from "next/link"
 import Image from "next/image";
+import { usePathname } from 'next/navigation'
 
 const Navbar = () => {
 
@@ -25,6 +26,7 @@ const Navbar = () => {
         }
     }
 
+    const path = usePathname();
 
     return (
         <div className="flex items-center justify-between md:justify-start md:gap-32 flex-wrap p-3 md:px-10 text-white z-10 lg:text-xl">
@@ -38,7 +40,7 @@ const Navbar = () => {
                 />
             </Link>
             <button className="md:hidden mb-3" onClick={showLinks}>
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" className="size-7">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" className={`size-7 ${path === '/products' ? 'text-brownColor' : ''}  `}>
                     <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
                 </svg>
             </button>
@@ -46,7 +48,7 @@ const Navbar = () => {
                 {
                     Links.map((item) => {
                         return (
-                            <Link className="lg:hover:text-brownColor transition-colors duration-200 font-semibold " key={item.address} href={item.address}>
+                            <Link className={`lg:hover:text-brownColor transition-colors duration-200 font-semibold ${path === '/products' ? 'text-black' : ''} `} key={item.address} href={item.address}>
                                 {item.title}
                             </Link>
                         )
