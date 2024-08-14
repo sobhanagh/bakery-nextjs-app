@@ -19,6 +19,9 @@ const config: Config = {
       blur: {
         xs: '2px',
       },
+      screens: {
+        'small': '320px',
+      },
     },
   },
   plugins: [
