@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import TopProducts from "./component/TopProducts";
 import FirstBuy from "./component/FirstBuy";
+import AboutUs from "./component/AboutUs";
 
 
 export default function Home() {
@@ -28,7 +29,9 @@ export default function Home() {
       <div className="mt-10">
         <FirstBuy />
       </div>
-
+      <div className="mt-10">
+        <AboutUs />
+      </div>
     </main >
   );
 }
