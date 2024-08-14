@@ -17,7 +17,7 @@ const Product = ({ title, category, price, img, desc }: productType) => {
                 width={1000}
                 height={1000}
                 alt="product"
-                className="sm:w-1/2 sm:h-56 w-full h-72 object-cover rounded-lg border-brownColor border-4"
+                className="w-full h-72  sm:w-1/2 sm:h-56 object-cover rounded-lg border-brownColor border-4"
             />
             <div className="flex flex-col gap-1 sm:w-1/2">
                 <div className="flex justify-between font-semibold border-b-4 border-dotted">
