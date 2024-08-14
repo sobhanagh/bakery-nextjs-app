@@ -21,7 +21,7 @@ export default function Home() {
         </div>
       </div>
       <div className="flex flex-col">
-        <h1 className='text-2xl lg:text-3xl text-center mb-16'>Top Products</h1>
+        <h1 className='text-2xl lg:text-3xl text-center mb-16 font-bold'>Top Products</h1>
         <div className="mt-5">
           <TopProducts />
         </div>
