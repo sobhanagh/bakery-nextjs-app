@@ -1,14 +1,10 @@
+"use client";
+
+import { useState } from "react";
 import Product from "../component/product"
 
-type productType = {
-    title: string,
-    category: string,
-    price: number,
-    img: string,
-    desc: string,
-}
 
-const page = () => {
+const Page = () => {
 
     const btns = [
         { title: "All" },
@@ -101,6 +97,18 @@ const page = () => {
         },
     ];
 
+    const [entries, setEntries] = useState(menu);
+
+    const handleClick = (e: any) => {
+        const category = e.target.innerText.toLocaleLowerCase();
+        if (category === "all") {
+            setEntries(menu)
+        }
+        else {
+            setEntries(menu.filter((item) => item.category === category))
+        }
+    }
+
     return (
         <div className="mt-5 px-10">
             <h1 className="text-3xl font-semibold text-center underline underline-offset-8 decoration-brownColor decoration-4">Our Menu</h1>
@@ -110,7 +118,10 @@ const page = () => {
                     btns.map((btn, index) => {
                         return (
                             <button key={index}
-                                className="border-2 px-2 py-1 text-brownColor border-brownColor rounded-md lg:hover:bg-brownColor lg:hover:text-white  duration-300"
+                                onClick={handleClick}
+                                className="border-2 px-2 py-1 text-brownColor border-brownColor rounded-md lg:hover:bg-brownColor lg:hover:text-white
+                                lg:text-xl lg:px-3 lg:py-2
+                                duration-300"
                             >{btn.title}</button>
                         )
                     })
@@ -118,7 +129,7 @@ const page = () => {
             </div>
             <div className="grid grid-cols-1 lg:grid-cols-2 mt-14 justify-items-center gap-3">
                 {
-                    menu.map((item) => {
+                    entries.map((item) => {
                         return (
                             <Product key={item.id} {...item} />
                         )
@@ -130,4 +141,6 @@ const page = () => {
     )
 }
 
-export default page
+export default Page
+
+
