@@ -8,7 +8,7 @@ type productType = {
     desc: string,
 }
 
-const Product = ({ title, category, price, img, desc }: productType) => {
+const Product = ({ title, price, img, desc }: productType) => {
 
     return (
         <div className="flex flex-col gap-3 sm:flex-row w-5/6">
