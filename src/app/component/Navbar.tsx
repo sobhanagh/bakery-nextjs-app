@@ -8,7 +8,7 @@ const Navbar = () => {
 
     const Links = [
         { title: "Home", address: "/" },
-        { title: "Products", address: "/products" },
+        { title: "Products", address: "/products/all" },
         { title: "Contact Us", address: "/contactus" },
         { title: "Services", address: "/services" },
     ]
