@@ -1,10 +1,8 @@
-"use client";
-
-import { useState } from "react";
-import Product from "../component/product"
+import Product from "@/app/component/product";
+import Link from "next/link";
 
 
-const Page = () => {
+const Page = ({ params }: any) => {
 
     const btns = [
         { title: "All" },
@@ -97,17 +95,9 @@ const Page = () => {
         },
     ];
 
-    const [entries, setEntries] = useState(menu);
+    const searchTerm = params.category;
 
-    const handleClick = (e: any) => {
-        const category = e.target.innerText.toLocaleLowerCase();
-        if (category === "all") {
-            setEntries(menu)
-        }
-        else {
-            setEntries(menu.filter((item) => item.category === category))
-        }
-    }
+    const entries = searchTerm === "all" ? [...menu] : menu.filter((item) => item.category === searchTerm);
 
     return (
         <div className="mt-5 px-10">
@@ -117,12 +107,13 @@ const Page = () => {
                 {
                     btns.map((btn, index) => {
                         return (
-                            <button key={index}
-                                onClick={handleClick}
-                                className="border-2 px-2 py-1 text-brownColor border-brownColor rounded-md lg:hover:bg-brownColor lg:hover:text-white
+                            <Link href={`${btn.title.toLocaleLowerCase()}`} key={index}>
+                                <button
+                                    className="border-2 px-2 py-1 text-brownColor border-brownColor rounded-md lg:hover:bg-brownColor lg:hover:text-white
                                 lg:text-xl lg:px-3 lg:py-2
                                 duration-300"
-                            >{btn.title}</button>
+                                >{btn.title}</button>
+                            </Link>
                         )
                     })
                 }
