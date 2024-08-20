@@ -4,12 +4,12 @@ import TopProduct from './TopProduct'
 const TopProducts = () => {
 
     const ImageSource = [
-        { src: "/TopProducts/product_1.svg" },
-        { src: "/TopProducts/product_2.svg" },
-        { src: "/TopProducts/product_3.svg" },
-        { src: "/TopProducts/product_4.svg" },
-        { src: "/TopProducts/product_5.svg" },
-        { src: "/TopProducts/product_6.svg" },
+        { src: "/topProducts/product_1.svg" },
+        { src: "/topProducts/product_2.svg" },
+        { src: "/topProducts/product_3.svg" },
+        { src: "/topProducts/product_4.svg" },
+        { src: "/topProducts/product_5.svg" },
+        { src: "/topProducts/product_6.svg" },
     ]
 
     return (
